@@ -1,0 +1,39 @@
+{
+  "marcas": [
+    { "id": "1", "nome": "Volkswagen" },
+    { "id": "2", "nome": "Fiat" },
+    { "id": "3", "nome": "Toyota" },
+    { "id": "4", "nome": "Jeep" }
+  ],
+  "categorias": [
+    { "id": "1", "nome": "Econômico", "valorLocacao": 120.0 },
+    { "id": "2", "nome": "Intermediário", "valorLocacao": 180.0 },
+    { "id": "3", "nome": "SUV", "valorLocacao": 260.0 },
+    { "id": "4", "nome": "Executivo", "valorLocacao": 350.0 }
+  ],
+  "modelos": [
+    { "id": "1", "nome": "Gol", "ano": 2024, "marcaId": "1", "categoriaId": "1" },
+    { "id": "2", "nome": "Argo", "ano": 2024, "marcaId": "2", "categoriaId": "1" },
+    { "id": "3", "nome": "Corolla", "ano": 2025, "marcaId": "3", "categoriaId": "4" },
+    { "id": "4", "nome": "Compass", "ano": 2024, "marcaId": "4", "categoriaId": "3" },
+    { "id": "5", "nome": "Virtus", "ano": 2025, "marcaId": "1", "categoriaId": "2" }
+  ],
+  "veiculos": [
+    { "id": "1", "chassi": "9BWZZZ377VT004251", "placa": "ABC1D23", "anoFabricacao": 2024, "cor": "Prata", "kmRodado": 15000, "modeloId": "1" },
+    { "id": "2", "chassi": "9BD358A1NRYK12345", "placa": "BRA2E19", "anoFabricacao": 2024, "cor": "Branco", "kmRodado": 8200, "modeloId": "2" },
+    { "id": "3", "chassi": "9BRBDWHE5S0123456", "placa": "QWE3F45", "anoFabricacao": 2025, "cor": "Preto", "kmRodado": 3100, "modeloId": "3" },
+    { "id": "4", "chassi": "988675112RKA54321", "placa": "JEP4G67", "anoFabricacao": 2024, "cor": "Cinza", "kmRodado": 21500, "modeloId": "4" },
+    { "id": "5", "chassi": "9BWDL5BZ4SP098765", "placa": "VRT5H89", "anoFabricacao": 2025, "cor": "Azul", "kmRodado": 1200, "modeloId": "5" }
+  ],
+  "manutencoes": [],
+  "clientes": [
+    { "id": "1", "nome": "Ana Souza", "cpf": "123.456.789-01", "cnh": "01234567890", "validadeCnh": "2029-05-10", "telefone": "(11) 98765-4321", "email": "ana.souza@email.com", "endereco": "Rua das Flores, 120 - São Paulo/SP" },
+    { "id": "2", "nome": "Bruno Lima", "cpf": "234.567.890-12", "cnh": "12345678901", "validadeCnh": "2028-11-30", "telefone": "(21) 99876-5432", "email": "bruno.lima@email.com", "endereco": "Av. Atlântica, 500 - Rio de Janeiro/RJ" },
+    { "id": "3", "nome": "Carla Mendes", "cpf": "345.678.901-23", "cnh": "23456789012", "validadeCnh": "2025-03-15", "telefone": "(31) 97654-3210", "email": "carla.mendes@email.com", "endereco": "Rua da Bahia, 45 - Belo Horizonte/MG" }
+  ],
+  "locacoes": [],
+  "contratos": [],
+  "vistorias": [],
+  "pagamentos": [],
+  "notasFiscais": []
+}
