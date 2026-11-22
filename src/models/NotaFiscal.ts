@@ -1,0 +1,20 @@
+export interface NotaFiscal {
+  id?: string;
+  numero: string;
+  serie: string;
+  dataEmissao: string;
+  valor: number;
+  locacaoId: string;
+}
+
+export const notaFiscalInicial: NotaFiscal = {
+  numero: "",
+  serie: "1",
+  dataEmissao: "",
+  valor: 0,
+  locacaoId: "",
+};
+
+export function gerarNumeroNotaFiscal(quantidadeExistente: number): string {
+  return String(quantidadeExistente + 1).padStart(6, "0");
+}
