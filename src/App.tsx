@@ -11,6 +11,8 @@ import { VeiculoList } from "./pages/veiculos/VeiculoList";
 import { VeiculoForm } from "./pages/veiculos/VeiculoForm";
 import { ManutencaoList } from "./pages/manutencoes/ManutencaoList";
 import { ManutencaoForm } from "./pages/manutencoes/ManutencaoForm";
+import { ClienteList } from "./pages/clientes/ClienteList";
+import { ClienteForm } from "./pages/clientes/ClienteForm";
 
 function App() {
   return (
@@ -34,6 +36,9 @@ function App() {
           <Route path="/manutencoes" element={<ManutencaoList />} />
           <Route path="/manutencoes/novo" element={<ManutencaoForm />} />
           <Route path="/manutencoes/:id" element={<ManutencaoForm />} />
+          <Route path="/clientes" element={<ClienteList />} />
+          <Route path="/clientes/novo" element={<ClienteForm />} />
+          <Route path="/clientes/:id" element={<ClienteForm />} />
         </Routes>
       </main>
     </BrowserRouter>
