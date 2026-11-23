@@ -5,6 +5,8 @@ import { MarcaList } from "./pages/marcas/MarcaList";
 import { MarcaForm } from "./pages/marcas/MarcaForm";
 import { CategoriaList } from "./pages/categorias/CategoriaList";
 import { CategoriaForm } from "./pages/categorias/CategoriaForm";
+import { ModeloList } from "./pages/modelos/ModeloList";
+import { ModeloForm } from "./pages/modelos/ModeloForm";
 
 function App() {
   return (
@@ -19,6 +21,9 @@ function App() {
           <Route path="/categorias" element={<CategoriaList />} />
           <Route path="/categorias/novo" element={<CategoriaForm />} />
           <Route path="/categorias/:id" element={<CategoriaForm />} />
+          <Route path="/modelos" element={<ModeloList />} />
+          <Route path="/modelos/novo" element={<ModeloForm />} />
+          <Route path="/modelos/:id" element={<ModeloForm />} />
         </Routes>
       </main>
     </BrowserRouter>
