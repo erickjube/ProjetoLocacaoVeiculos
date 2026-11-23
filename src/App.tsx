@@ -7,6 +7,8 @@ import { CategoriaList } from "./pages/categorias/CategoriaList";
 import { CategoriaForm } from "./pages/categorias/CategoriaForm";
 import { ModeloList } from "./pages/modelos/ModeloList";
 import { ModeloForm } from "./pages/modelos/ModeloForm";
+import { VeiculoList } from "./pages/veiculos/VeiculoList";
+import { VeiculoForm } from "./pages/veiculos/VeiculoForm";
 
 function App() {
   return (
@@ -24,6 +26,9 @@ function App() {
           <Route path="/modelos" element={<ModeloList />} />
           <Route path="/modelos/novo" element={<ModeloForm />} />
           <Route path="/modelos/:id" element={<ModeloForm />} />
+          <Route path="/veiculos" element={<VeiculoList />} />
+          <Route path="/veiculos/novo" element={<VeiculoForm />} />
+          <Route path="/veiculos/:id" element={<VeiculoForm />} />
         </Routes>
       </main>
     </BrowserRouter>
