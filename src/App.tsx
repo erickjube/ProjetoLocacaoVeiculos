@@ -9,6 +9,8 @@ import { ModeloList } from "./pages/modelos/ModeloList";
 import { ModeloForm } from "./pages/modelos/ModeloForm";
 import { VeiculoList } from "./pages/veiculos/VeiculoList";
 import { VeiculoForm } from "./pages/veiculos/VeiculoForm";
+import { ManutencaoList } from "./pages/manutencoes/ManutencaoList";
+import { ManutencaoForm } from "./pages/manutencoes/ManutencaoForm";
 
 function App() {
   return (
@@ -29,6 +31,9 @@ function App() {
           <Route path="/veiculos" element={<VeiculoList />} />
           <Route path="/veiculos/novo" element={<VeiculoForm />} />
           <Route path="/veiculos/:id" element={<VeiculoForm />} />
+          <Route path="/manutencoes" element={<ManutencaoList />} />
+          <Route path="/manutencoes/novo" element={<ManutencaoForm />} />
+          <Route path="/manutencoes/:id" element={<ManutencaoForm />} />
         </Routes>
       </main>
     </BrowserRouter>

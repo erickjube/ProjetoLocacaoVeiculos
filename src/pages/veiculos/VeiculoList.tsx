@@ -95,6 +95,17 @@ export function VeiculoList() {
         return <span className={`badge text-bg-${corStatus[status]}`}>{statusVeiculoLabel[status]}</span>;
       },
     },
+    {
+      header: "Manutenções",
+      render: (veiculo) => (
+        <Button
+          label="Histórico"
+          variant="info"
+          size="sm"
+          onClick={() => navigate(`/manutencoes?veiculoId=${veiculo.id}`)}
+        />
+      ),
+    },
   ];
 
   return (
