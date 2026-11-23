@@ -1,6 +1,10 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Navbar } from "./components/Navbar";
 import { Home } from "./pages/Home";
+import { MarcaList } from "./pages/marcas/MarcaList";
+import { MarcaForm } from "./pages/marcas/MarcaForm";
+import { CategoriaList } from "./pages/categorias/CategoriaList";
+import { CategoriaForm } from "./pages/categorias/CategoriaForm";
 
 function App() {
   return (
@@ -9,6 +13,12 @@ function App() {
       <main className="container py-4">
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/marcas" element={<MarcaList />} />
+          <Route path="/marcas/novo" element={<MarcaForm />} />
+          <Route path="/marcas/:id" element={<MarcaForm />} />
+          <Route path="/categorias" element={<CategoriaList />} />
+          <Route path="/categorias/novo" element={<CategoriaForm />} />
+          <Route path="/categorias/:id" element={<CategoriaForm />} />
         </Routes>
       </main>
     </BrowserRouter>
