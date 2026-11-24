@@ -1,32 +1,46 @@
-# React + TypeScript + Vite
+# Locadora de Veículos
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+**Aluno:** Erick Silva Jube Ribeiro
 
-Currently, two official plugins are available:
+## Descrição
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Aplicação web desenvolvida em React com TypeScript para gerenciar uma locadora de veículos. O sistema controla a frota (marcas, categorias, modelos, veículos e manutenções), os clientes e todo o ciclo de uma locação: registro com contrato e vistoria de retirada, pagamentos, devolução com vistoria e emissão da nota fiscal. A interface usa Bootstrap e os dados são consumidos de uma API REST simulada com JSON Server.
 
-## React Compiler
+## Como executar
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the Oxlint configuration
-
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
-
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
+```bash
+npm install
+npm run server
+npm run dev
 ```
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+Execute `npm run server` e `npm run dev` em terminais separados.
+
+- Aplicação: `http://localhost:5173`
+- API (JSON Server): `http://localhost:3001`
+
+## Telas
+
+### Início
+![Início](prints/home.png)
+
+### Veículos
+![Veículos](prints/veiculos.png)
+
+### Manutenções
+![Manutenções](prints/manutencoes.png)
+
+### Clientes
+![Clientes](prints/clientes.png)
+
+### Locações
+![Locações](prints/locacoes.png)
+
+### Nova locação
+![Nova locação](prints/locacao-form.png)
+
+### Detalhes da locação
+![Detalhes da locação](prints/locacao-detalhe.png)
+
+### Devolução
+![Devolução](prints/devolucao.png)
