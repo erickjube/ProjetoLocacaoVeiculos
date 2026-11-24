@@ -17,6 +17,7 @@ import { LocacaoList } from "./pages/locacoes/LocacaoList";
 import { LocacaoForm } from "./pages/locacoes/LocacaoForm";
 import { LocacaoDetalhe } from "./pages/locacoes/LocacaoDetalhe";
 import { DevolucaoForm } from "./pages/locacoes/DevolucaoForm";
+import { PagamentoForm } from "./pages/locacoes/PagamentoForm";
 
 function App() {
   return (
@@ -47,6 +48,7 @@ function App() {
           <Route path="/locacoes/nova" element={<LocacaoForm />} />
           <Route path="/locacoes/:id" element={<LocacaoDetalhe />} />
           <Route path="/locacoes/:id/devolucao" element={<DevolucaoForm />} />
+          <Route path="/locacoes/:id/pagamento" element={<PagamentoForm />} />
         </Routes>
       </main>
     </BrowserRouter>

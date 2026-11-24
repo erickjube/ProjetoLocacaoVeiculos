@@ -11,7 +11,7 @@ import type { Contrato } from "../../models/Contrato";
 import { calcularNumeroDiarias, corStatusLocacao, statusLocacaoLabel, type Locacao } from "../../models/Locacao";
 import type { Marca } from "../../models/Marca";
 import type { Modelo } from "../../models/Modelo";
-import type { NotaFiscal } from "../../models/NotaFiscal";
+import { gerarNumeroNotaFiscal, notaFiscalInicial, type NotaFiscal } from "../../models/NotaFiscal";
 import { formaPagamentoLabel, statusPagamentoLabel, type Pagamento } from "../../models/Pagamento";
 import type { Veiculo } from "../../models/Veiculo";
 import { tipoVistoriaLabel, type Vistoria } from "../../models/Vistoria";
@@ -95,6 +95,34 @@ export function LocacaoDetalhe() {
     await locacaoService.atualizar(id, { ...detalhe.locacao, status: "CANCELADA" });
     setAlerta({ type: "success", message: "Locação cancelada com sucesso." });
     carregar();
+  }
+
+  async function emitirNotaFiscal() {
+    if (!id || !detalhe) {
+      return;
+    }
+    if (detalhe.locacao.status !== "FINALIZADA") {
+      setAlerta({ type: "warning", message: "A nota fiscal só pode ser emitida para locações finalizadas." });
+      return;
+    }
+    try {
+      if (await notaFiscalService.buscarPorLocacao(id)) {
+        setAlerta({ type: "warning", message: "Esta locação já possui nota fiscal emitida." });
+        return;
+      }
+      const notas = await notaFiscalService.listar();
+      await notaFiscalService.criar({
+        ...notaFiscalInicial,
+        numero: gerarNumeroNotaFiscal(notas.length),
+        dataEmissao: new Date().toLocaleDateString("en-CA"),
+        valor: detalhe.locacao.valorTotal,
+        locacaoId: id,
+      });
+      setAlerta({ type: "success", message: "Nota fiscal emitida com sucesso." });
+      carregar();
+    } catch {
+      setAlerta({ type: "danger", message: "Não foi possível emitir a nota fiscal." });
+    }
   }
 
   if (!detalhe) {
@@ -243,9 +271,19 @@ export function LocacaoDetalhe() {
         <div className="col-12">
           <Card title="Pagamentos">
             <Table columns={colunasPagamentos} data={pagamentos} />
-            <p className="mb-0">
-              <strong>Total pago:</strong> {formatarMoeda(totalPago)} de {formatarMoeda(locacao.valorTotal)}
-            </p>
+            <div className="d-flex flex-wrap justify-content-between align-items-center gap-2">
+              <p className="mb-0">
+                <strong>Total pago:</strong> {formatarMoeda(totalPago)} de {formatarMoeda(locacao.valorTotal)}
+              </p>
+              {locacao.status !== "CANCELADA" && (
+                <Button
+                  label="Registrar pagamento"
+                  variant="primary"
+                  size="sm"
+                  onClick={() => navigate(`/locacoes/${id}/pagamento`)}
+                />
+              )}
+            </div>
           </Card>
         </div>
         <div className="col-12">
@@ -266,7 +304,10 @@ export function LocacaoDetalhe() {
                 </p>
               </>
             ) : (
-              <p className="mb-0">Nenhuma nota fiscal emitida.</p>
+              <div className="d-flex flex-wrap justify-content-between align-items-center gap-2">
+                <p className="mb-0">Nenhuma nota fiscal emitida.</p>
+                <Button label="Emitir nota fiscal" variant="primary" size="sm" onClick={emitirNotaFiscal} />
+              </div>
             )}
           </Card>
         </div>
