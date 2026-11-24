@@ -29,6 +29,12 @@ export const statusLocacaoLabel: Record<StatusLocacao, string> = {
   CANCELADA: "Cancelada",
 };
 
+export const corStatusLocacao: Record<StatusLocacao, string> = {
+  ABERTA: "primary",
+  FINALIZADA: "success",
+  CANCELADA: "secondary",
+};
+
 export function calcularNumeroDiarias(dataInicio: string, dataFim: string): number {
   const umDia = 24 * 60 * 60 * 1000;
   const diferenca = new Date(dataFim).getTime() - new Date(dataInicio).getTime();

@@ -13,6 +13,8 @@ import { ManutencaoList } from "./pages/manutencoes/ManutencaoList";
 import { ManutencaoForm } from "./pages/manutencoes/ManutencaoForm";
 import { ClienteList } from "./pages/clientes/ClienteList";
 import { ClienteForm } from "./pages/clientes/ClienteForm";
+import { LocacaoList } from "./pages/locacoes/LocacaoList";
+import { LocacaoForm } from "./pages/locacoes/LocacaoForm";
 
 function App() {
   return (
@@ -39,6 +41,8 @@ function App() {
           <Route path="/clientes" element={<ClienteList />} />
           <Route path="/clientes/novo" element={<ClienteForm />} />
           <Route path="/clientes/:id" element={<ClienteForm />} />
+          <Route path="/locacoes" element={<LocacaoList />} />
+          <Route path="/locacoes/nova" element={<LocacaoForm />} />
         </Routes>
       </main>
     </BrowserRouter>
